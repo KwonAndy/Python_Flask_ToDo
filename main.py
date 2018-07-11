@@ -12,6 +12,11 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 
+@app.route('/')
+def home():
+    return redirect(url_for('all'))
+
+
 @app.route('/all')
 def all_tasks():
  return render_template('all.jinja2', tasks=Task.select())
