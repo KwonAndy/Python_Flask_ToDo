@@ -14,7 +14,7 @@ app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 @app.route('/')
 def home():
-    return redirect(url_for('all'))
+    return redirect(url_for('login'))
 
 
 @app.route('/all')
